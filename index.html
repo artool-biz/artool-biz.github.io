@@ -97,6 +97,9 @@
                 <p><b>ARTool</b> is born from the industry request to speed up development cycle by bringing <b>augmented reality</b> in manufacturing. Using our proprietary software, the <b>virtual world</b> of CAM will finally enter in shop floors, reducing <b>from-art-to-part time</b> and increasing <b>efficiency in maintenance</b> workflow.</p>
                 <!-- Insert youtube video -->
                 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/xXRnwa-9-0Y" frameborder="0" allowfullscreen></iframe></p>
+                <a href="#team" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -109,7 +112,7 @@
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-md-4 team-block">
-                      <img class="team-photo" src="img/user.png">
+                      <img class="team-photo" src="img/amedeo.jpg"><br/>
                       <a href="mailto:amedeo@artool.biz" class="btn btn-default btn-lg"><span class="network-name">Amedeo Setti</span></a>
                       <p class="person-description">
                         Mechatronics engineer<br>
@@ -118,7 +121,7 @@
                       </p>
                     </div>
                     <div class="col-md-4 team-block">
-                      <img class="team-photo" src="img/user.png"><br/>
+                      <img class="team-photo" src="img/paolo.png"><br/>
                       <a href="mailto:paolo@artool.biz" class="btn btn-default btn-lg"><span class="network-name">Paolo Bosetti</span></a>
                       <p class="person-description">
                         Prof. in Manufaturing at <a href="https://www.unitn.it">UniTN</a><br>
@@ -126,7 +129,7 @@
                       </p>
                     </div>
                     <div class="col-md-4 team-block">
-                      <img class="team-photo" src="img/user.png"><br/>
+                      <img class="team-photo" src="img/matteo.jpg"><br/>
                       <a href="mailto:teo@artool.biz" class="btn btn-default btn-lg"><span class="network-name">Matteo Ragni</span></a>
                       <p class="person-description">
                         Mechatronics engineer<br>
@@ -138,6 +141,9 @@
                 </div>
             </div>
         </div>
+        <a href="#contact" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>
     </section>
 
     <!-- Contact Section -->
@@ -145,13 +151,70 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Us</h2>
-                <p>Feel free to email us to join our manufacturing revolution!</p>
-                <p><form action="https://getsimpleform.com/messages?form_api_token=c9c894c5876721e976a253e988d23c77" method="post">
-                  <input type="text" class="btn btn-default btn-lg" placeholder="Your email" name="mail">
-                  <input type="button" class="btn btn-default btn-lg" value="submit" name="submit">
-                </form></p>
+                <p>Feel free to contact us to join our manufacturing revolution!</p>
+                <!-- https://getsimpleform.com/messages?form_api_token=c9c894c5876721e976a253e988d23c77 -->
+
+                <!-- Form Settings
+                Akismet key:
+                Reply to field: mail
+                Subject templeate: [ARTool] :: {subject}
+                Body Template:
+                Hi Amedeo,<br/>
+                You received a contact request from: <pre>{{mail}}</pre><br/>
+                with the subject: <b>{{subject}}</b><br/>
+                and body of the mail as follow:<br/>
+                <br/>
+                <pre>
+                {{body}}
+                </pre><br/>
+                Reply directly to this email to continue the conversation.
+                sincerely,<br/>
+                ARToolBot
+
+                End form settings -->
+                <div class="modal fade" id="mailModal" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Send us a mail!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div id="modalForm">
+                        <p><form name="contact" action="javascript:FormSubmit()" class="container-fluid">
+                          <input type="text" class="col-xs-12 input-text btn-lg" placeholder="Subject" name="subject" required><br>
+                          <textarea class="col-xs-12 input-text btn-lg" placeholder="Write here your message..." name="body" required></textarea><br/>
+                          <input type="email" class="col-xs-9 input-text btn-lg" placeholder="Your email" name="mail" required>
+                          <input type="submit" class="col-xs-3 btn btn-success btn-lg" value="submit" name="submit">
+                        </form></p>
+                      </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="mailSuccess" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+
+                        <h4 class="modal-title">Thank You!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>You will be contacted as soon as possible!</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a data-toggle="modal" data-target="#mailModal" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Mail</span></a>
+                    </li>
                     <li>
                         <a href="http://blog.artool.biz" class="btn btn-default btn-lg"><i class="fa fa-tumblr fa-fw"></i> <span class="network-name">Blog</span></a>
                     </li>
@@ -190,7 +253,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
-
+    <script src="js/form.submit.js"></script>
 </body>
 
 </html>
