@@ -1,271 +1,417 @@
 <!DOCTYPE html>
+<!--
+   =================================
+      _   ___ _____ ___   ___  _
+     /_\ | _ \_   _/ _ \ / _ \| |
+    / _ \|   / | || (_) | (_) | |__
+   /_/ \_\_|_\ |_| \___/ \___/|____|
+   =================================
+   THE MISSING GEAR IN MANUFACTURING
+   =================================
+
+  Artool Website v2 - Matteo Ragni 2016
+ -->
 <html lang="en">
-
-<head>
-
+  <!--
+     _  _             _
+    | || |___ __ _ __| |
+    | __ / -_) _` / _` |
+    |_||_\___\__,_\__,_|
+  -->
+  <head>
+    <!--
+        ___ _ _         _       __                    _   _
+       / __(_) |_ ___  (_)_ _  / _|___ _ _ _ __  __ _| |_(_)___ _ _
+       \__ \ |  _/ -_) | | ' \|  _/ _ \ '_| '  \/ _` |  _| / _ \ ' \
+       |___/_|\__\___| |_|_||_|_| \___/_| |_|_|_\__,_|\__|_\___/_||_|
+    -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>ARTOOL - The missing gear in manufacturing</title>
+    <link rel="icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="ARTOOL is the missing gear in manufacturing,
+      using augmented reality in industrial applications such
+      as CNC machining.">
 
-    <title>ARTool</title>
+     <!--
+        ___        _
+       | __|__ _ _| |_ ___
+       | _/ _ \ ' \  _(_-<
+       |_|\___/_||_\__/__/
+    -->
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!--
+        ___                 ___ ___ ___
+       | _ \_  _ _ _ ___   / __/ __/ __|
+       |  _/ || | '_/ -_) | (__\__ \__ \
+       |_|  \_,_|_| \___|  \___|___/___/
+    -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
     <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
 
-    <script>
-    // WARNING:: Only for design!!
-    //setInterval(function() {location.reload();}, 2000);
-    </script>
-</head>
+    <!--
+        _                 _  ___ ___ ___
+       | |   ___  __ __ _| |/ __/ __/ __|
+       | |__/ _ \/ _/ _` | | (__\__ \__ \
+       |____\___/\__\__,_|_|\___|___/___/
+    -->
+      <link rel="stylesheet" href="css/main.css">
+  </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!--
+      ___          _
+     | _ ) ___  __| |_  _
+     | _ \/ _ \/ _` | || |
+     |___/\___/\__,_|\_, |
+                     |__/
+  -->
+  <body>
+  <div class="all">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-gear"></i>  AR<span class="light">Tool</span>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Mission</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading"><img id="brand" src="img/logo.png"></h1>
-                        <p class="intro-text">The <b>missing gear</b> in manufacturing</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Our Mission</h2>
-                <p><b>ARTool</b> is born from the industry request to speed up development cycle by bringing <b>augmented reality</b> in manufacturing. Using our proprietary software, the <b>virtual world</b> of CAM will finally enter in shop floors, reducing <b>from-art-to-part time</b> and increasing <b>efficiency in maintenance</b> workflow.</p>
-                <!-- Insert youtube video -->
-                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/xXRnwa-9-0Y" frameborder="0" allowfullscreen></iframe></p>
-                <a href="#team" class="btn btn-circle page-scroll">
-                    <i class="fa fa-angle-double-down animated"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Us</h2>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-4 team-block">
-                      <img class="team-photo" src="img/amedeo.jpg"><br/>
-                      <a href="mailto:amedeo@artool.biz" class="btn btn-default btn-lg"><span class="network-name">Amedeo Setti</span></a>
-                      <p class="person-description">
-                        Mechatronics engineer<br>
-                        Main software developer of the project<br>
-                        Business manager
-                      </p>
-                    </div>
-                    <div class="col-md-4 team-block">
-                      <img class="team-photo" src="img/paolo.png"><br/>
-                      <a href="mailto:paolo@artool.biz" class="btn btn-default btn-lg"><span class="network-name">Paolo Bosetti</span></a>
-                      <p class="person-description">
-                        Prof. in Manufaturing at <a href="https://www.unitn.it">UniTN</a><br>
-                        Expert in manufacturing
-                      </p>
-                    </div>
-                    <div class="col-md-4 team-block">
-                      <img class="team-photo" src="img/matteo.jpg"><br/>
-                      <a href="mailto:teo@artool.biz" class="btn btn-default btn-lg"><span class="network-name">Matteo Ragni</span></a>
-                      <p class="person-description">
-                        Mechatronics engineer<br>
-                        Ph.D. Candidate at <a href="https://www.unitn.it">UniTN</a><br>
-                        Software developer
-                      </p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <a href="#contact" class="btn btn-circle page-scroll">
-            <i class="fa fa-angle-double-down animated"></i>
+    <!-- NAVIGATION -->
+    <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading jumper" onclick="javascript:goOnTop()">
+          <img class="pure-image-responsive" src="img/artool-text-right.png">
         </a>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Us</h2>
-                <p>Feel free to contact us to join our manufacturing revolution!</p>
-                <!-- https://getsimpleform.com/messages?form_api_token=c9c894c5876721e976a253e988d23c77 -->
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item"><a href="#mission" class="pure-menu-link jumper">Mission</a></li>
+          <!-- GO DOWN -->
+          <li class="pure-menu-item"><a href="#team" class="pure-menu-link jumper">Team</a></li>
+          <!-- GO DOWN -->
+          <li class="pure-menu-item"><a href="#award" class="pure-menu-link jumper">Awards</a></li>
+          <!-- GO DOWN -->
+          <li class="pure-menu-item"><a href="#contacts" class="pure-menu-link jumper">Contacts</a></li>
+          <!-- GO DOWN -->
+        </ul>
+      </div>
+    </div>
 
-                <!-- Form Settings
-                Akismet key:
-                Reply to field: mail
-                Subject templeate: [ARTool] :: {subject}
-                Body Template:
-                Hi Amedeo,<br/>
-                You received a contact request from: <pre>{{mail}}</pre><br/>
-                with the subject: <b>{{subject}}</b><br/>
-                and body of the mail as follow:<br/>
-                <br/>
-                <pre>
-                {{body}}
-                </pre><br/>
-                Reply directly to this email to continue the conversation.
-                sincerely,<br/>
-                ARToolBot
+    <!-- SPLASH DIV -->
+    <div class="splash-container" id="splash">
+      <div id="video_background"> </div>
+      <div class="splash-shadow">
+      <div class="splash">
+        <h1 class="splash-head">
+          <img class="pure-image-responsive" src="img/artool-text-under.png"><br/>
+        </h1>
+        <h1 class="splash-subhead">
+          The <b>missing gear</b> in manufacturing
+        </h1>
+      </div>
+    </div>
+    </div>
 
-                End form settings -->
-                <div class="modal fade" id="mailModal" role="dialog">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title">Send us a mail!</h4>
-                      </div>
-                      <div class="modal-body">
-                        <div id="modalForm">
-                        <p><form name="contact" action="javascript:FormSubmit()" class="container-fluid">
-                          <input type="text" class="col-xs-12 input-text btn-lg" placeholder="Subject" name="subject" required><br>
-                          <textarea class="col-xs-12 input-text btn-lg" placeholder="Write here your message..." name="body" required></textarea><br/>
-                          <input type="email" class="col-xs-9 input-text btn-lg" placeholder="Your email" name="mail" required>
-                          <input type="submit" class="col-xs-3 btn btn-success btn-lg" value="submit" name="submit">
-                        </form></p>
-                      </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal fade" id="mailSuccess" role="dialog">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
 
-                        <h4 class="modal-title">Thank You!</h4>
-                      </div>
-                      <div class="modal-body">
-                        <p>You will be contacted as soon as possible!</p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <div class="content-wrapper">
+      <!-- MISSION -->
+      <div id="mission" class="content skewed-block skewed-white">
+        <div class="pure-g">
+          <div class="l-box pure-u-1 pure-u-md-1-1 pure-u-lg-1-1 is-center">
+            <h2 class="content-head is-center">Our Mission</h2>
+            <p class="is-justified">
+              <b>ARTOOL</b> is born from the industrial need to speed up development cycle,
+              bringing <b>augmented reality</b> in manufacturing. Using our proprietary software,
+              the <b>virtual CAMs worlds</b> will enter in the shop floors, reducing <b>from-art-to-part
+              time</b> and increasing </b>efficiency in maintenance</b> workflow, boosting productivity
+              and killing production lead time.
+            </p>
+          </div>
+          <!-- Example line 1 -->
+          <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+            <h3 class="content-head is-center"><i class="fa fa-cogs"></i> Debug</h3>
+            <p class="is-center">
+              <img src="img/examples/500_debug.png" class="pure-img-responsive img-example">
+            </p>
+            <p class="fig-captions is-justified">
+              Debug the origin defintions of the CNC. The Augmented Reality device is directly connected
+              to the controller
+            </p>
+          </div>
+          <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+            <h3 class="content-head is-center"><i class="fa fa-cogs"></i> Simulate</h3>
+            <p class="is-center">
+              <img src="img/examples/500_simulate.png" class="pure-img-responsive img-example">
+            </p>
+            <p class="fig-captions is-justified">
+              Simulate the trajectory defined in your part program against the real working area
+            </p>
+          </div>
+          <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+            <h3 class="content-head is-center"><i class="fa fa-cogs"></i> Maintainance</h3>
+            <p class="is-center">
+              <img src="img/examples/500_maintenance.png" class="pure-img-responsive img-example">
+            </p>
+            <p class="fig-captions is-justified">
+              Find the failed components and order them online if necessary; no need to inspect complex schematics
+            </p>
+          </div>
+          <!-- Example line 2 -->
+          <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+            <h3 class="content-head is-center"><i class="fa fa-cogs"></i> Measure</h3>
+            <p class="is-center">
+              <img src="img/examples/500_measure.png" class="pure-img-responsive img-example">
+            </p>
+            <p class="fig-captions is-justified">
+              3D precise measuring tool, that is extremely fast that allows you to use machine origins,
+              for shop-floor written code
+            </p>
+          </div>
+          <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 is-center">
+            <h3 class="content-head is-center"><i class="fa fa-cogs"></i> Inspection</h3>
+            <p class="is-center">
+              <img src="img/examples/500_inspect.png" class="pure-img-responsive img-example">
+            </p>
+            <p class="fig-captions is-justified">
+              Inspect the scene and check your CAM design against in machine defined origins
+            </p>
+          </div>
+          <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+            <h3 class="content-head is-center"><i class="fa fa-cogs"></i> Collision</h3>
+            <p class="is-center">
+              <img src="img/examples/500_collision.png" class="pure-img-responsive img-example">
+            </p>
+            <p class="fig-captions is-justified">
+              Identify catastrophic collisions and guarantee machine survival against your youngest technician
+            </p>
+          </div>
+        </div>
+        <div class="pure-g">
+          <div class="l-box pure-u-1 pure-u-md-1-1 pure-u-lg-1-2 is-center">
+            <h3 class="content-subhead"><i class="fa fa-cogs"></i> Advanced capabilities</h3>
+            <p class="video-container">
+              <iframe id="video1" width="100%" src="https://www.youtube.com/embed/xXRnwa-9-0Y" frameborder="0" allowfullscreen></iframe>
+            </p>
+          </div>
+          <div class="l-box pure-u-1 pure-u-md-1-1 pure-u-lg-1-2 is-center">
+            <h3 class="content-subhead"><i class="fa fa-hourglass-half"></i> Time saving solution</h3>
+            <p class="video-container">
+              <iframe id="video2" width="100%" src="https://www.youtube.com/embed/1pzIEYxGHsQ" frameborder="0" allowfullscreen></iframe>
+            </p>
+          </div>
+        </div>
+    </div>
 
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a data-toggle="modal" data-target="#mailModal" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Mail</span></a>
-                    </li>
-                    <li>
-                        <a href="http://blog.artool.biz" class="btn btn-default btn-lg"><i class="fa fa-tumblr fa-fw"></i> <span class="network-name">Blog</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/artoolbiz" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UCMAHnoT74f7ziPmp0Iewg1w" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i> <span class="network-name">Youtube</span></a>
-                    </li>
+      <!-- PEOPLE -->
+      <div id="team" class="content skewed-block skewed-ribbon">
+        <div class="pure-g">
+          <div class="l-box pure-u-1 pure-u-md-1-1 pure-u-lg-1-1 is-center">
+          <h2 class="content-head-ribbon is-center">Our Team</h2>
+          <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 is-center">
+              <h3 class="content-subhead">Amedeo Setti</h3>
+              <p>
+                <img src="img/amedeo.jpg" class="pure-img-responsive container-photo">
+                <ul class="is-center">
+                  <li>Mechatronics engineer</li>
+                  <li>Leading Software Developer</li>
+                  <li>Business manager</li>
                 </ul>
+              </p>
             </div>
+            <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 is-center">
+              <h3 class="content-subhead">Ph.D. Paolo Bosetti</h3>
+              <p>
+                <img src="img/paolo.png" class="pure-img-responsive container-photo">
+                <ul class="is-center">
+                  <li>Ph.D. in Materials Engineering</li>
+                  <li>Prof. in Manufacturing @ UniTrento</li>
+                  <li>Expert in Manufacturing</li>
+                </ul>
+              </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3  is-center">
+              <h3 class="content-subhead">Matteo Ragni</h3>
+              <p>
+                <img src="img/matteo.jpg" class="pure-img-responsive container-photo">
+                <ul class="is-center">
+                  <li>Mechatronics engineer</li>
+                  <li>Ph.D. Candidate @ UniTrento</li>
+                  <li>Software Developer</li>
+                </ul>
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Map Section -->
-    <div id="map"></div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; <b>AR</b>Tool 2015</p>
+      <!-- AWARD -->
+      <div id="award" class="content skewed-block skewed-white">
+        <div class="pure-g">
+          <div class="l-box pure-u-1 pure-u-md-1-1 pure-u-lg-1-1 is-center">
+            <h2 class="content-head is-center">Awards</h2>
+            <p>
+              <img src="https://www.unicreditstartlab.eu/etc/designs/ucstartuplab/images/logo-unicredit-startlab.png" class="pure-img-responsive">
+            </p>
+            <p class="is-justified">
+             <b>28th October, 2015</b> &mdash; During D2T - Start Cup 2015 promoted by Trentino Sviluppo,
+             ARTOOL won the Unicredit Start Lab Special Price. ARTOOL enters in the UniCredit accelerated
+             program, that collects the best enterprise idea that are boosted through the direct access
+             to the Startup Academy and a dedicated coaching program.<br/>
+             <small><a href="https://www.unicreditstartlab.eu/it/startlab/attivita/news/PremiospecialeTrentinoSviluppo.html">Read more</a></small>
+            </p>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+      <style>
+        .man-in-the-middle:before {
+          background-image: url('img/contact-back.png');
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .vspace-div {
+          height: 400px;
+        }
+      </style>
+      <!--<div id="you" class="content skewed-block man-in-the-middle">-->
+      <div id="you" class="content skewed-block man-in-the-middle">
+        <div class="vspace-div">
+        </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+      </div>
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
+      <!-- CONTACTS -->
+      <div id="contacts" class="content contacts skewed-block skewed-ribbon">
+        <div class="pure-g">
+          <div class="l-box pure-u-1 pure-u-md-1-1 pure-u-lg-1-1">
+            <h2 class="content-head-ribbon is-center">Contact Us</h2>
+            <p class="is-center">
+              Feel free to contact us to join our manufacturing revolution.
+            </p>
+            <p>
+              <form id="contactForm" class="pure-form pure-form-stacked">
+                <fieldset class="is-center">
+                  <input name="cnt_name" type="text" placeholder="Your Name" required>
+                  <input name="cnt_email" type="email" placeholder="Your Email" required>
+                  <textarea name="cnt_message" rows="5" placeholder="Type here you message"></textarea>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5b-N68MO13X1TYEBGc7G9uNiONYqyRLw&sensor=false"></script>
+                  <button type="submit" class="pure-button margin-auto">
+                    <!--<img src="img/artool.gif" height="50px">-->
+                    SAY HI!
+                  </button>
+                </fieldset>
+              </form>
+          </div>
+        </div>
+      </div>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-    <script src="js/form.submit.js"></script>
+      <!-- Maps -->
+      <div id="map" class="content"></div>
 
-    <!-- ANALITICHE -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <!-- FOOTER -->
+      <div class="content footer">
+        <div class="pure-g">
+          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+            <div class="is-left">
+              <address>
+                <img class="pure-img-responsive footer-logo" src="img/artool-text-right.png"><br />
+                Polo scientifico tecnologico Fabio Ferrari<br />
+                Dipartimento Ingegneria Indutriale<br />
+                Sommarive, 9<br />
+                Trento, TN<br />
+                38123-IT
+              </address>
+            </div>
+          </div>
+          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+            <div class="is-right">
+                <p class="footer-icons">
+                  <a href="mailto:info@artool.biz"><i class="fa fa-envelope"> </i></a>
+                  <a href="http://blog.artool.biz/"><i class="fa fa-tumblr"> </i></a>
+                  <a href="https://github.com/artoolbiz"><i class="fa fa-github"> </i></a>
+                  <a href="https://www.youtube.com/channel/UCMAHnoT74f7ziPmp0Iewg1w"><i class="fa fa-youtube"> </i></a>
+                </p>
+                <p>
+                  <img class="footer-img" src="img/workplace.png">
+                </p>
+                <small>Copyright 2016 - Artool</small>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      ga('create', 'UA-60052177-3', 'auto');
-      ga('send', 'pageview');
 
+    </div>
+  </div> <!--all-->
+
+    <!--
+         _               ___         _      _
+      _ | |__ ___ ____ _/ __| __ _ _(_)_ __| |_
+     | || / _` \ V / _` \__ \/ _| '_| | '_ \  _|
+      \__/\__,_|\_/\__,_|___/\__|_| |_| .__/\__|
+                                        |_|
+    -->
+    <!-- JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous">
     </script>
-</body>
 
+    <!-- VIDEO -->
+    <script src="js/videos.js"></script>
+
+    <!-- MAPS -->
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCXZBwIDaQEQD8loU9Uo5nP93_s1alVLdo&extension=.js'></script>
+    <script src="js/maps.js"></script>
+
+    <script src="js/contact.js"></script>
+
+    <script>
+      /* Scrolling in position */
+
+      var pages_pos = null;
+
+      $(document).ready(function() {
+        $(".jumper").on("click", function(e) {
+          e.preventDefault();
+          $("body, html").animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+          }, 600);
+        });
+
+        // Defines the positions of the elements
+        pages_pos = [
+          Math.round($("#mission").offset().top),
+          Math.round($("#team").offset().top),
+          Math.round($("#award").offset().top),
+          Math.round($("#contacts").offset().top)
+        ];
+      });
+
+      function goOnTop() {
+        $("body, html").animate({
+          scrollTop: 0
+        }, 600);
+      }
+
+      $(window).on('scroll', function() {
+        var stop = Math.round($(window).scrollTop());
+        var ary = $('.jumper');
+        disableClass();
+        if (stop > pages_pos[0] && stop < pages_pos[1]) { $("a[href='#mission']").addClass("pure-menu-selected"); return }
+        else if (stop > pages_pos[1] && stop < pages_pos[2]) { $("a[href='#team']").addClass("pure-menu-selected"); return }
+        else if (stop > pages_pos[2] && stop < pages_pos[3]) { $("a[href='#award']").addClass("pure-menu-selected"); return }
+        else if (stop > pages_pos[3]) { $("a[href='#contacts']").addClass("pure-menu-selected"); return }
+      });
+
+      function disableClass() {
+        $(".jumper").removeClass("pure-menu-selected");
+      }
+    </script>
+  </body>
 </html>
