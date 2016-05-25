@@ -24,26 +24,28 @@ function videoBackgroundSize() {
 
 function onYouTubeIframeAPIReady() {
   sizes = videoBackgroundSize();
-  player = new YT.Player('video_background', {
-    height: sizes[1],
-    width: sizes[0],
-    videoId: 'Vo3lxvm2aJU',
-    playerVars: {
-      'autoplay': 1,
-      'controls': 0,
-      'disablekb': 0,
-      'fs': 0,
-      'loop': 1,
-      'modestbranding': 1,
-      'showinfo': 0,
-      'rel': 0,
-      'playlist': 'Vo3lxvm2aJU'
-    },
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange,
-    }
-  });
+  if ($(window).width() > 450) {
+    player = new YT.Player('video_background', {
+      height: sizes[1],
+      width: sizes[0],
+      videoId: 'Vo3lxvm2aJU',
+      playerVars: {
+        'autoplay': 1,
+        'controls': 0,
+        'disablekb': 0,
+        'fs': 0,
+        'loop': 1,
+        'modestbranding': 1,
+        'showinfo': 0,
+        'rel': 0,
+        'playlist': 'Vo3lxvm2aJU'
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange,
+      }
+    });
+  }
 }
 
 function onPlayerReady(event) { player.mute(); return; }
