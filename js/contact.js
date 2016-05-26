@@ -7,7 +7,7 @@ var __ContactUs = function() {
     msg_data = this.checkValues();
     if (msg_data) {
       $.post("http://artoolrelay.altervista.org/respond.php",
-        msg_data, null, "jsonp").done(
+        msg_data, null, "json").done(
           this.done
         ).success(
           this.success
