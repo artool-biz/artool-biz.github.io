@@ -7,7 +7,7 @@ var __ContactUs = function() {
     msg_data = this.checkValues();
     if (msg_data) {
       $.post("http://artoolrelay.altervista.org/respond.php",
-        msg_data, null, "json").done(
+        msg_data, null, "jsonp").done(
           this.done
         ).success(
           this.success
@@ -36,6 +36,12 @@ var __ContactUs = function() {
   this.fail = function(data) {
     console.log("ERROR");
     console.log(data);
+    if(data) {
+      if (data.responseText == "OK") {
+        alert("Thank you. Your message was correctly sent.\n We will contact you as soon as possible");
+        return;
+      }
+    }
     alert("Something went wrong... Please try again and check your internet connection...");
   }
 
