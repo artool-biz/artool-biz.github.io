@@ -18,10 +18,13 @@ Measure | Inspection | Collision
 ![img](img/examples/md/300_measure.png) | ![img](img/examples/md/300_inspect.png) | ![img](img/examples/md/300_collison.png)
 3D precise measuring tool, that is extremely fast that allows you to use machine origins, for shop-floor written code | Inspect the scene and check your CAM design against in machine defined origins | Identify catastrophic collisions and guarantee machine survival against your youngest technician
 
- * Advanced Capabilities:
-   [![Video](http://img.youtube.com/vi/xXRnwa-9-0Y/0.jpg)](https://www.youtube.com/watch?v=xXRnwa-9-0Y)
- * Time saving solutions:
-   [![Video](http://img.youtube.com/vi/1pzIEYxGHsQ/0.jpg)](https://www.youtube.com/watch?v=1pzIEYxGHsQ)
+#### Advanced Capabilities:
+
+[![Video](http://img.youtube.com/vi/xXRnwa-9-0Y/0.jpg)](https://www.youtube.com/watch?v=xXRnwa-9-0Y)
+
+#### Time saving solutions:
+
+[![Video](http://img.youtube.com/vi/1pzIEYxGHsQ/0.jpg)](https://www.youtube.com/watch?v=1pzIEYxGHsQ)
 
 ### Team
 

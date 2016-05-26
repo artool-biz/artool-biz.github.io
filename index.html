@@ -277,7 +277,7 @@
         }
       </style>
       <!--<div id="you" class="content skewed-block man-in-the-middle">-->
-      <div id="you" class="content skewed-block man-in-the-middle">
+      <div id="inciseDiv" class="content skewed-block man-in-the-middle">
         <div class="vspace-div">
         </div>
 
@@ -376,12 +376,22 @@
 
       var pages_pos = null;
 
+      function resetImageIncise() {
+        var img = $('#inciseDiv');
+        var width = $(document).width();
+        var ratio = 2.382;
+        var height = Math.round(width/ratio);
+        $('.vspace-div').height(height);
+      }
+
       $(document).ready(function() {
         $(".jumper").on("click", function(e) {
           e.preventDefault();
           $("body, html").animate({
             scrollTop: $( $(this).attr('href') ).offset().top
           }, 600);
+
+          resetImageIncise();
         });
 
         // Defines the positions of the elements

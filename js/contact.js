@@ -1,17 +1,13 @@
 var __ContactUs = function() {
-  this.alpha = "181407732:AAE05fF2FKXCfcwURu2-SgMPNK-ibJP7cRc";
-  this.beta  =  -135768168;
-  //this.beta = 20537949;
-
   this.name = $("input[name=cnt_name]");
   this.mail = $("input[name=cnt_email]");
   this.message = $("textarea[name=cnt_message]");
 
   this.requestPost = function() {
-    msg_text = this.checkValues();
-    if (msg_text) {
-      $.post("https://api.telegram.org/bot" + this.alpha + "/sendMessage",
-        { chat_id: this.beta, text: msg_text }, null, "json").done(
+    msg_data = this.checkValues();
+    if (msg_data) {
+      $.post("http://artoolrelay.altervista.org/respond.php",
+        msg_data, null, "json").done(
           this.done
         ).success(
           this.success
@@ -30,7 +26,7 @@ var __ContactUs = function() {
   this.success = function(data) {
     console.log("SUCCESS");
     console.log(data);
-    if (data.ok == true) {
+    if (data == "OK") {
       alert("Thank you. Your message was correctly sent.\n We will contact you as soon as possible");
     } else {
       alert("Something went wrong... Your request was not accepted... Mail us!\ninfo@artool.biz");
@@ -46,9 +42,11 @@ var __ContactUs = function() {
   this.checkValues = function() {
     if (this.name.val() != "") {
       if (this.mail.val() != "") {
-        return "NEW MESSAGE FROM:\n" + this.name.val() + "\n" +
-               this.mail.val() + "\n\n" +
-               this.message.val() + "\nEND MESSAGE";
+        return {
+          name: this.name.val(),
+          email: this.mail.val(),
+          message: this.message.val()
+        }
       }
     }
     return null;
@@ -58,6 +56,11 @@ var __ContactUs = function() {
 
 var contactUs = new __ContactUs();
 $("#contactForm").submit(function() {
-  contactUs.requestPost();
-  return false;
+  try {
+    contactUs.requestPost();
+    return false;
+  } catch(err) {
+    console.log(err);
+    return false;
+  }
 });
