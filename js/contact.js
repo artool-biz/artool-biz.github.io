@@ -26,10 +26,10 @@ var __ContactUs = function() {
   this.success = function(data) {
     console.log("SUCCESS");
     console.log(data);
-    if (data == "OK") {
+    if (data.status == "200") {
       alert("Thank you. Your message was correctly sent.\n We will contact you as soon as possible");
     } else {
-      alert("Something went wrong... Your request was not accepted... Mail us!\ninfo@artool.biz");
+      alert("Something went wrong... Your request was not accepted... Mail us!\nmatteo.ragni@unitn.it");
     }
   }
 
@@ -37,7 +37,7 @@ var __ContactUs = function() {
     console.log("ERROR");
     console.log(data);
     if(data) {
-      if (data.responseText == "OK") {
+      if (data.status == "200") {
         alert("Thank you. Your message was correctly sent.\n We will contact you as soon as possible");
         return;
       }
