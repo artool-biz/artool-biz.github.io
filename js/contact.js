@@ -6,7 +6,7 @@ var __ContactUs = function() {
   this.requestPost = function() {
     msg_data = this.checkValues();
     if (msg_data) {
-      $.post("http://artoolrelay.altervista.org/respond.php",
+      $.post("https://mragni.altervista.org/artool_respond.php",
         msg_data, null, "json").done(
           this.done
         ).success(
@@ -49,8 +49,9 @@ var __ContactUs = function() {
     if (this.name.val() != "") {
       if (this.mail.val() != "") {
         return {
-          name: this.name.val(),
-          email: this.mail.val(),
+          id: "ARTOOL",
+          subject: this.name.val(),
+          contact: this.mail.val(),
           message: this.message.val()
         }
       }
